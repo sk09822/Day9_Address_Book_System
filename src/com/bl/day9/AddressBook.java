@@ -6,15 +6,7 @@ public class AddressBook {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Address Book");
-		contactDetails newContact = new contactDetails();
-		newContact.setFirstName("Sandipan \n");
-		newContact.setLastName("Kanade \n");
-		newContact.setAddressCity("Ahmednagar \n");
-		newContact.setState("Maharashtra \n");
-		newContact.setZip(413736);
-		newContact.setPhoneNumber("9822726196 \n");
-		newContact.setEmail("sandipankanade.sk@gmail.com \n");
-		System.out.println("The Contact is : \n" + newContact);
+
 		newAddressBook person = new newAddressBook();
 		person.addContact();
 
