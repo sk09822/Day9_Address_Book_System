@@ -6,20 +6,27 @@ public class AddressBook {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Address Book");
-		 Scanner sc = new Scanner(System.in);
-	        AddressBookDe person = new AddressBookDe();
-	        person.addContact();//Calling Add Contacts Method
-	        System.out.println("Enter Y To Edit The Contact");
-	        String op = sc.nextLine();
-
-	        if (op.equals("y") || op.equals("Y")) {
-
-	            System.out.println("You have Entered following data");
-	            System.out.println("The Contact Details After Editing : " + person);
+		  Scanner sc = new Scanner(System.in);
+	        AddressBookDe Book = new AddressBookDe();
+	            Book.addContact();//Calling Add Contacts Method
+	            System.out.println(Book.person);
+	            System.out.println("Enter the choice \n 1. Edit \n 2. Delete");
+	            int option = sc.nextInt();
+	            switch (option) {
+	                case 1:
+	                    Book.editContact();
+	                    System.out.println("You have Entered following data");
+	                    System.out.println(Book.person);
+	                    System.out.println("Thank you for Using the Address book");
+	                    break;
+	                case 2:
+	                    Book.deleteContact();
+	                    System.out.println("Address Book details :" + Book.person);
+	                    break;
+	            }
 	        }
 	    }
-	
-	}
+
 
 
 
@@ -139,5 +146,16 @@ public void editContact() {
     else
         System.out.println("The Entered First Name Is Not Match");
     editContact();
+}
+
+
+
+public void deleteContact() {
+    System.out.println("Enter firstName of the person");
+    String editName = sc.nextLine();
+    if (editName.equals(person.getFirstName())) {
+        System.out.println("Deleted " + person.getFirstName() + " details");
+        person = null;
+    }
 }
 }
